@@ -9223,7 +9223,7 @@ registerStorage(_app.default);
 "use strict";
 
 require("@firebase/storage");
-},{"@firebase/storage":"node_modules/@firebase/storage/dist/index.browser.esm.js"}],"upload.js":[function(require,module,exports) {
+},{"@firebase/storage":"node_modules/@firebase/storage/dist/index.browser.esm.js"}],"src/upload.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9318,7 +9318,7 @@ function upload(selector) {
 
       reader.onload = function (ev) {
         var src = ev.target.result;
-        preview.insertAdjacentHTML('afterbegin', "\n\t\t\t\t\t<div class=\"preview-image\">\n\t\t\t\t\t<div class=\"preview-remove\" data-name=\"".concat(file.name, "\">&times;</div>\n\t\t\t\t\t\t<img  src=\"").concat(src, "\" alt=\"").concat(file.name, "\"/>\n\t\t\t\t\t\t<div class=\"preview-info\">\n\t\t\t\t\t\t\t<span>").concat(file.name, "</span>\n\t\t\t\t\t\t\t").concat(bytesToSize(file.size), "\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t"));
+        preview.insertAdjacentHTML('afterbegin', "\n\t\t\t\t\t<div class=\"preview-image\">\n\t\t\t\t\t<div class=\"preview-remove\" data-name=\"".concat(file.name, "\">&times;</div>\n\t\t\t\t\t\t<img ").concat(src, "=\"\" alt=\"").concat(file.name, "\"/>\n\t\t\t\t\t\t<div class=\"preview-info\">\n\t\t\t\t\t\t\t<span>").concat(file.name, "</span>\n\t\t\t\t\t\t\t").concat(bytesToSize(file.size), "\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t"));
       };
 
       reader.readAsDataURL(file);
@@ -9365,7 +9365,7 @@ function upload(selector) {
   preview.addEventListener('click', removeHandler);
   upload.addEventListener('click', uploadHandler);
 }
-},{}],"app.js":[function(require,module,exports) {
+},{}],"src/app.js":[function(require,module,exports) {
 "use strict";
 
 var _app = _interopRequireDefault(require("firebase/app"));
@@ -9416,7 +9416,7 @@ console.log(storage);
     });
   }
 });
-},{"firebase/app":"node_modules/firebase/app/dist/index.esm.js","firebase/storage":"node_modules/firebase/storage/dist/index.esm.js","./upload.js":"upload.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"firebase/app":"node_modules/firebase/app/dist/index.esm.js","firebase/storage":"node_modules/firebase/storage/dist/index.esm.js","./upload.js":"src/upload.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -9444,7 +9444,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57883" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61390" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -9620,5 +9620,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.js"], null)
-//# sourceMappingURL=/app.c328ef1a.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/app.js"], null)
+//# sourceMappingURL=/app.a6a4d504.js.map

@@ -44,12 +44,11 @@ export function upload(selector, options = {}) {
 
 	const triggerInput = () => input.click();
 	const changeHandler = event => {
-
 		if (!event.target.files.length) {
 			return;
 		}
 
-		files = Array.from(event.target.files);// массив из объекта
+		files = Array.from(event.target.files); // массив из объекта
 		preview.innerHTML = '';
 		upload.style.display = 'inline';
 
@@ -61,16 +60,19 @@ export function upload(selector, options = {}) {
 
 			reader.onload = ev => {
 				const src = ev.target.result;
-				preview.insertAdjacentHTML('afterbegin', `
+				preview.insertAdjacentHTML(
+					'afterbegin',
+					`
 					<div class="preview-image">
 					<div class="preview-remove" data-name="${file.name}">&times;</div>
-						<img src="${src}" alt="${file.name}"/>
+						<img  src="${src}" alt="${file.name}"/>
 						<div class="preview-info">
 							<span>${file.name}</span>
 							${bytesToSize(file.size)}
 						</div>
 					</div>
-				`);
+				`,
+				);
 			};
 
 			reader.readAsDataURL(file);
@@ -91,7 +93,6 @@ export function upload(selector, options = {}) {
 		const block = preview.querySelector(`[data-name="${name}"]`).closest('.preview-image');
 		block.classList.add('removing');
 		setTimeout(() => block.remove(), 300);
-
 	};
 
 	const clearPreview = el => {
